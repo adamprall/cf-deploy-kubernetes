@@ -1,0 +1,25 @@
+---
+version: '1.0'
+
+steps:
+  build:
+    type: build
+    working-directory: ${{initial-clone}}
+    image-name: $docker-image
+    tag: ${{CF_REVISION}}
+  push:
+    type: push
+    candidate: ${{build}}
+    tag: ${{CF_REVISION}}
+  deploy-to-kubernetes-staging:
+    image: codefresh/cf-deploy-kubernetes
+    tag: latest
+    working-directory: ${{initial-clone}}
+    commands:
+      - /cf-deploy-kubernetes deployment.yml
+    environment:
+      - KUBERNETES_USER=${{KUBERNETES_USER}}
+      - KUBERNETES_PASSWORD=${{KUBERNETES_PASSWORD}}
+      - KUBERNETES_SERVER=${{KUBERNETES_SERVER}}
+      - DOCKER_IMAGE_TAG=${{CF_REVISION}}
+
