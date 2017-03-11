@@ -19,6 +19,7 @@ steps:
     commands:
       - /deploy/bin/deploy.sh ./root
     environment:
+      - ENVIRONMENT=${{ENVIRONMENT}}
       - KUBERNETES_USER=${{KUBERNETES_USER}}
       - KUBERNETES_PASSWORD=${{KUBERNETES_PASSWORD}}
       - KUBERNETES_SERVER=${{KUBERNETES_SERVER}}
