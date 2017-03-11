@@ -1,11 +1,10 @@
----
 version: '1.0'
 
 steps:
   build:
     type: build
     working-directory: ${{initial-clone}}
-    image-name: $docker-image
+    image-name: codefreshio/cf-kubernetes-test
     tag: ${{CF_REVISION}}
   push:
     type: push

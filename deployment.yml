@@ -1,4 +1,3 @@
----
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -12,7 +11,7 @@ spec:
     spec:
       containers:
         - name: alpine-nginx
-          image: $docker-image:$DOCKER_IMAGE_TAG
+          image: codefreshio/cf-kubernetes-test:$DOCKER_IMAGE_TAG
           ports:
             - containerPort: 80
               name: http
