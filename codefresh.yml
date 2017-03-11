@@ -17,7 +17,7 @@ steps:
     tag: latest
     working-directory: ${{initial-clone}}
     commands:
-      - /deploy/bin/deploy.sh deployment.yml
+      - /deploy/bin/deploy.sh ./root
     environment:
       - KUBERNETES_USER=${{KUBERNETES_USER}}
       - KUBERNETES_PASSWORD=${{KUBERNETES_PASSWORD}}
