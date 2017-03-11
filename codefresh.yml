@@ -4,7 +4,7 @@ steps:
   build:
     type: build
     working-directory: ${{initial-clone}}
-    image-name: codefreshio/cf-kubernetes-test
+    image-name: ncodefresh/cf-kubernetes-test
     tag: ${{CF_REVISION}}
   push:
     type: push
