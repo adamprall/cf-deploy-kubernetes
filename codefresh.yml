@@ -5,12 +5,12 @@ steps:
     type: build
     working-directory: ${{initial-clone}}
     image-name: ncodefresh/cf-kubernetes-test
-    tag: ${{CF_REVISION}}
+    tag: '${{CF_REVISION}}'
 
   push:
     type: push
     candidate: ${{build}}
-    tag: ${{CF_REVISION}}
+    tag: ${{CF_BRANCH}}
 
   deploy-to-kubernetes-staging:
     image: codefreshio/kubernetes-deployer:master
