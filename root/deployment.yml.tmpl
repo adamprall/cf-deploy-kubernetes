@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: alpine-nginx
-          image: ncodefresh/cf-kubernetes-test:$DOCKER_IMAGE_TAG
+          image: ncodefresh/adam-site:$DOCKER_IMAGE_TAG
           ports:
             - containerPort: 80
               name: http
